@@ -1,4 +1,3 @@
-from pydantic import with_config
 from sqlalchemy import select, insert
 from app.database import async_session_maker
 

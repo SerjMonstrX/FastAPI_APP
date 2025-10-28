@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     DB_NAME: str
     DATABASE_URL: str = Field(default_factory=lambda: "")
 
+    SECRET_KEY: str
+    ENCODE_ALGORYTHM: str
+
     model_config = ConfigDict(env_file=os.path.join(BASE_DIR, ".env"))
 
     # def __init__(self, **kwargs):
@@ -31,4 +34,3 @@ class Settings(BaseSettings):
         return self
 
 settings = Settings()
-print(settings.DATABASE_URL)
